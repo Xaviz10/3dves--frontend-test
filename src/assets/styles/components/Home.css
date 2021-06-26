@@ -1,0 +1,11 @@
+
+.pokedex-container {
+    position: relative;
+    top: 50px;
+    min-height: calc(100vh - 100px);
+    margin: 20px;
+    padding: 10px;
+    
+    background-color: aliceblue;
+    border-radius: 5px;
+}

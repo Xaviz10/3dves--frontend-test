@@ -1,0 +1,19 @@
+.header{
+    position: fixed;
+    display: grid;
+    place-items: center;
+    top: 0;
+    padding: 0 20px;
+
+    width: 100%;
+    min-width: 320px;
+    height: 50px;
+    z-index: 10;
+
+    background: linear-gradient(180deg, rgba(0, 10, 255, 0.73) 0%, rgba(21, 28, 210, 0.476042) 47.19%, rgba(0, 10, 255, 0.38) 100%);
+    box-shadow: 0 1px rgb(235, 234, 234);
+}
+
+.header img {
+    width: 100px;
+}
