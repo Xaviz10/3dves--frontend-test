@@ -5,6 +5,7 @@ import { fetchPokemons, fetchSpeciesPokemonCard } from '../actions';
 import '../assets/styles/components/PokemonSelector.css';
 
 import PokemonGallery from './PokemonGallery';
+import PokemonTable from './PokemonTable';
 
 
 const PokemonSelector = () => {
@@ -20,13 +21,15 @@ const PokemonSelector = () => {
     if (!data.loading) {
         return (
             <div className="pokemon-selector-container">
-                <PokemonGallery />
+                <PokemonTable />
+                {/* <PokemonGallery /> */}
             </div>
         );
     } else {
         return (
             <div className="pokemon-selector-container">
-                <PokemonGallery />
+                <PokemonTable />
+                {/* <PokemonGallery /> */}
                 <h1>Loading...</h1>
             </div>
         );

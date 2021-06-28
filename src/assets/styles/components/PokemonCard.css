@@ -67,6 +67,7 @@
 .pokemon-card__pokemon-type .pokemon-type__item{
     margin-left: 20px;
     margin-right: 20px;
+    width: 90px;
     padding: 0 10px;
     text-align: center;
 

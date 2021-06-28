@@ -104,8 +104,8 @@
 }
 
 .pokemon-gallery__pokemon-preview .pokemon-preview__pokemon-type .pokemon-type__item{
-    margin-left: 20px;
-    margin-right: 20px;
+    width: 90px;
+    margin: 0 5px;
     padding: 0 5px;
     text-align: center;
 
