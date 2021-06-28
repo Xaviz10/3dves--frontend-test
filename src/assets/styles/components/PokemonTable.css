@@ -2,7 +2,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content:center;
     
     margin: 0;
     width: auto;
@@ -10,12 +9,12 @@
     height: calc(100vh - 100px);
     padding: 20px;
 
-    /* overflow: hidden;
+    overflow: scroll;
     overflow-y: scroll;
-    overscroll-behavior-y: contain; 
-    scroll-snap-type: x proximity;
+    overscroll-behavior-y: contain;
+    overscroll-behavior-x: contain;
     scroll-behavior: smooth;
-
+/* 
     -ms-overflow-style: none; 
     scrollbar-width: none;  Firefox */
 
@@ -24,19 +23,40 @@
     border-radius: 5px;
 }
 
-.pokemon-table-container .pokemon-table-grid{
+.pokemon-table-container .pokemon-table{
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 40px 30px;
-    grid-template-areas: 
-    "header header header header header header"
-    "row row row row row row";
-    gap: 5px;
-    width: 100%;
-    height: 100%;
+
+    font-size: 1.4rem;
+    line-height: 1.6rem;
 }
 
-.pokemon-table-grid .pokemon-table__header{
+.pokemon-table tr{
+    height: 30px;
     
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
 }
+
+.pokemon-table .pokemon-table__header {
+    height: 35px;
+
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+
+    text-align: center;
+}
+.pokemon-table td{
+    min-width: 50px;
+    text-align: center;
+
+}
+
+.pokemon-table .pokemon-table__row td{
+    cursor: pointer;
+}
+
+.pokemon-table .pokemon-preview__id {
+    font-weight: 500;
+}
+
