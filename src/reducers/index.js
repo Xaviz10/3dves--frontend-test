@@ -1,21 +1,41 @@
 
-
-
-const reducer = (state, action) => {
+const initialState = {
+    loading: true,
+    pokemon_card: 1,
+    pokemon_species: {},
+    pokemons: []
+}
+    
+const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'GET_POKEMON_DATA':
+        case 'FETCH_POKEMONS':
             return {
                 ...state,
-                pokemons_details: [...state.pokemons_details, action.payload],
+                pokemons: state.pokemons.concat(action.payload),
+                loading: false,
             }
-        case 'UPDATE_POKEMONS_IN_VIEW':
+        
+        case 'FETCH_POKEMONS_REQUEST':
             return {
                 ...state,
-                pokemons_in_view: action.payload,
+                loading: true
             }
+        
+        case 'UPDATE_POKEMON_CARD_ID':
+            return {
+                ...state,
+                pokemon_card: action.payload
+            }
+        case 'FETCH_SPECIES_POKEMON':
+            return {
+                ...state,
+                pokemon_species: action.payload
+            }
+        
         default:
             return state
     }
+
 }
 
 export default reducer;
