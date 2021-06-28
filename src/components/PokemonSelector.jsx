@@ -6,6 +6,7 @@ import '../assets/styles/components/PokemonSelector.css';
 
 import PokemonGallery from './PokemonGallery';
 import PokemonTable from './PokemonTable';
+import PokemonList from './PokemonList';
 
 
 const PokemonSelector = () => {
@@ -21,14 +22,16 @@ const PokemonSelector = () => {
     if (!data.loading) {
         return (
             <div className="pokemon-selector-container">
-                <PokemonTable />
+                <PokemonList />
+                {/* <PokemonTable /> */}
                 {/* <PokemonGallery /> */}
             </div>
         );
     } else {
         return (
             <div className="pokemon-selector-container">
-                <PokemonTable />
+                <PokemonList />
+                {/* <PokemonTable /> */}
                 {/* <PokemonGallery /> */}
                 <h1>Loading...</h1>
             </div>

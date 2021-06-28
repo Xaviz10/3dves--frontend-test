@@ -24,75 +24,71 @@ const PokemonList = () => {
     if (!data.loading) {
     
         return (
-            <div className="pokemon-table-container">
-                <div className="pokemon-list">
-                    
+            <div className="pokemon-list-container">
+                <ol className="pokemon-list">
                     {data.pokemons.map(item => {
                         return (
-                            <article>
+                            <li className="pokemon-list__details"
+                            onClick={() => hadleUpdateCard(item.id)}>
                                 {item.id}. {capitalizeFirstLetter(item.name)}
-                                <ul key={item.id} className="pokemon-table__row"
-                                    onClick={() => hadleUpdateCard(item.id)}>
-                                    <li className="pokemon-preview__id pokemon-table__row">#{item.id}</li>
-                                    <li className="pokemon-preview__name pokemon-table__row">{capitalizeFirstLetter(item.name)}</li>
+                                <ul key={item.id} className="pokemon-preview__type"> <span>Types:</span> 
                                     {item.types.map(typeItem => {
                                         return (
-                                            <li key={typeItem.type.name} className="pokemon-type__item pokemon-table__row">{capitalizeFirstLetter(typeItem.type.name)}</li>
+                                            <li key={typeItem.type.name} className="pokemon-type__item">{capitalizeFirstLetter(typeItem.type.name)}</li>
                                         );
                                     }
                                     )}
-
+                                </ul>
+                                <ul key={item.id} className="pokemon-preview__type"> <span>Abilities:</span> 
                                     {item.abilities.map(abilityItem => {
                                         return (
                                             <li key={abilityItem.ability.name} className="pokemon-ability__item ">{capitalizeFirstLetter(abilityItem.ability.name)}</li>
                                         );
                                     }
                                     )}
-
                                 </ul>
-                            </article>
-                            
+                                
+                            </li>
                         );
                     }
                     )}
-                </div>
+                </ol>
+                
                 <UpdatePokemons />
             </div>
         );
     } else {
         return (
-            <div className="pokemon-table-container">
-                <div className="pokemon-list">
-                    
+            <div className="pokemon-list-container">
+                <ol className="pokemon-list">
                     {data.pokemons.map(item => {
                         return (
-                            <article>
+                            <li className="pokemon-list__details"
+                            onClick={() => hadleUpdateCard(item.id)}>
                                 {item.id}. {capitalizeFirstLetter(item.name)}
-                                <ul key={item.id} className="pokemon-table__row"
-                                    onClick={() => hadleUpdateCard(item.id)}>
-                                    <li className="pokemon-preview__id pokemon-table__row">#{item.id}</li>
-                                    <li className="pokemon-preview__name pokemon-table__row">{capitalizeFirstLetter(item.name)}</li>
+                                <ul key={item.id} className="pokemon-preview__type"> <span>Types:</span> 
                                     {item.types.map(typeItem => {
                                         return (
-                                            <li key={typeItem.type.name} className="pokemon-type__item pokemon-table__row">{capitalizeFirstLetter(typeItem.type.name)}</li>
+                                            <li key={typeItem.type.name} className="pokemon-type__item">{capitalizeFirstLetter(typeItem.type.name)}</li>
                                         );
                                     }
                                     )}
-
+                                </ul>
+                                <ul key={item.id} className="pokemon-preview__type"> <span>Abilities:</span> 
                                     {item.abilities.map(abilityItem => {
                                         return (
                                             <li key={abilityItem.ability.name} className="pokemon-ability__item ">{capitalizeFirstLetter(abilityItem.ability.name)}</li>
                                         );
                                     }
                                     )}
-
                                 </ul>
-                            </article>
-                            
+                                
+                            </li>
                         );
                     }
                     )}
-                </div>
+                </ol>
+                
                 <UpdatePokemons />
             </div>
         );

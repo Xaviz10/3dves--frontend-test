@@ -9,6 +9,9 @@ const Home = () => {
         <div className="pokedex-container">
             <PokemonSelector />
             <PokemonCard />
+            <button className="view-gallery">Gallery</button>
+            <button className="view-table">Table</button>
+            <button className="view-list">List</button>
         </div>
     );
     
