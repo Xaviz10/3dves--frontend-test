@@ -20,22 +20,48 @@ const PokemonSelector = () => {
     }, []);
 
     if (!data.loading) {
-        return (
-            <div className="pokemon-selector-container">
-                <PokemonList />
-                {/* <PokemonTable /> */}
-                {/* <PokemonGallery /> */}
-            </div>
-        );
+        switch (data.view) {
+            case 1:
+                return (
+                    <div className="pokemon-selector-container">
+                        <PokemonGallery />
+                    </div>
+                );
+            case 2:
+                return (
+                    <div className="pokemon-selector-container">
+                        <PokemonTable />
+                    </div>
+                );
+            case 3:
+                return (
+                    <div className="pokemon-selector-container">
+                        <PokemonList />
+                    </div>
+                );
+        }
+        
     } else {
-        return (
-            <div className="pokemon-selector-container">
-                <PokemonList />
-                {/* <PokemonTable /> */}
-                {/* <PokemonGallery /> */}
-                <h1>Loading...</h1>
-            </div>
-        );
+        switch (data.view) {
+            case 1:
+                return (
+                    <div className="pokemon-selector-container">
+                        <PokemonGallery />
+                    </div>
+                );
+            case 2:
+                return (
+                    <div className="pokemon-selector-container">
+                        <PokemonTable />
+                    </div>
+                );
+            case 3:
+                return (
+                    <div className="pokemon-selector-container">
+                        <PokemonList />
+                    </div>
+                );
+        }
     }
     
 };

@@ -1,6 +1,7 @@
 
 const initialState = {
     loading: true,
+    view: 1,
     pokemon_card: 1,
     pokemon_species: {},
     pokemons: []
@@ -30,6 +31,23 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 pokemon_species: action.payload
+            }
+        case 'SELECT_GALLERY_VIEW':
+            return {
+                ...state,
+                view: 1
+            }
+        case 'SELECT_TABLE_VIEW':
+
+            return {
+                ...state,
+                view: 2
+            }
+        case 'SELECT_LIST_VIEW':
+
+            return {
+                ...state,
+                view: 3
             }
         
         default:

@@ -28,7 +28,6 @@ const PokemonCard = () => {
                 <p className="pokemon-card__details">{`Height: ${(pokemonCard.height * 0.1).toFixed(2)}m; Weight: ${(pokemonCard.weight * 0.1).toFixed(2)}kg`}</p>
                 <div className="pokemon-card__pokemon-type">
                     {pokemonCard.types.map(item => {
-                        console.log(item.type.name)
                         return (
                             <h2 key={item.type.name} className="pokemon-type__item">{capitalizeFirstLetter(item.type.name)}</h2>
                         );
@@ -70,16 +69,16 @@ const PokemonCard = () => {
                 <div className="pokemon-card__abilities">
                     <p className="abilities__title"><span>Abilities</span></p>
                     <div className="pokemon-card__abilities-container">
-                        <div className="abilities__item">
-                            <p className="ability__name">
-                                {pokemonCard.abilities[0].ability.name}
-                            </p>
-                        </div>
-                        <div className="abilities__item">
-                            <p className="ability__name">
-                                {pokemonCard.abilities[1].ability.name}
-                            </p>
-                        </div>
+                        {pokemonCard.abilities.map(item => {
+                            return (
+                                <div className="abilities__item">
+                                    <p className="ability__name">
+                                        {item.ability.name}
+                                    </p>
+                                </div>
+                            );
+                        }
+                    )}
                     </div>
                 </div>
                 <p className="pokemon-card__id">{pokemonCard.id}</p>
@@ -97,7 +96,6 @@ const PokemonCard = () => {
                 <p className="pokemon-card__details">{`Height: ${(pokemonCard.height * 0.1).toFixed(2)}m; Weight: ${(pokemonCard.weight * 0.1).toFixed(2)}kg`}</p>
                 <div className="pokemon-card__pokemon-type">
                     {pokemonCard.types.map(item => {
-                        console.log(item.type.name)
                         return (
                             <h2 key={item.type.name} className="pokemon-type__item">{capitalizeFirstLetter(item.type.name)}</h2>
                         );
@@ -139,16 +137,17 @@ const PokemonCard = () => {
                 <div className="pokemon-card__abilities">
                     <p className="abilities__title"><span>Abilities</span></p>
                     <div className="pokemon-card__abilities-container">
-                        <div className="abilities__item">
-                            <p className="ability__name">
-                                {pokemonCard.abilities[0].ability.name}
-                            </p>
-                        </div>
-                        <div className="abilities__item">
-                            <p className="ability__name">
-                                {pokemonCard.abilities[1].ability.name}
-                            </p>
-                        </div>
+                    {pokemonCard.abilities.map(item => {
+                        return (
+                            <div className="abilities__item">
+                                <p className="ability__name">
+                                    {item.ability.name}
+                                </p>
+                            </div>
+                        );
+                    }
+                    )}
+
                     </div>
                 </div>
                 <p className="pokemon-card__id">{pokemonCard.id}</p>

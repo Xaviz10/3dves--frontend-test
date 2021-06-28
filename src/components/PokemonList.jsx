@@ -39,7 +39,7 @@ const PokemonList = () => {
                                     }
                                     )}
                                 </ul>
-                                <ul key={item.id} className="pokemon-preview__type"> <span>Abilities:</span> 
+                                <ul className="pokemon-preview__abilities"> <span>Abilities:</span> 
                                     {item.abilities.map(abilityItem => {
                                         return (
                                             <li key={abilityItem.ability.name} className="pokemon-ability__item ">{capitalizeFirstLetter(abilityItem.ability.name)}</li>
@@ -74,7 +74,7 @@ const PokemonList = () => {
                                     }
                                     )}
                                 </ul>
-                                <ul key={item.id} className="pokemon-preview__type"> <span>Abilities:</span> 
+                                <ul  className="pokemon-preview__ablities"> <span>Abilities:</span> 
                                     {item.abilities.map(abilityItem => {
                                         return (
                                             <li key={abilityItem.ability.name} className="pokemon-ability__item ">{capitalizeFirstLetter(abilityItem.ability.name)}</li>

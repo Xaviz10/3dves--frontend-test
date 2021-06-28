@@ -9,8 +9,7 @@ export const fetchSpeciesPokemonCard = (index) => {
         // });
 
         const response = await Axios.get(`https://pokeapi.co/api/v2/pokemon-species/${index}/`);
-        
-        console.log(response.data)
+
 
         dispatch({
             type: 'FETCH_SPECIES_POKEMON',
@@ -42,7 +41,6 @@ export const fetchPokemons = (index) => {
 }
 
 export const updatePokemonCardId = (index) =>  {
-    console.log('Index ID', index);
     return (dispatch) => {
 
         dispatch({
@@ -56,3 +54,15 @@ export const updateIndexPokemons = payload => ({
     type: 'UPDATE_INDEX_POKEMONS',
     payload,
 });
+
+export const selectGalleryView = payload => ({
+    type: 'SELECT_GALLERY_VIEW',
+})
+
+export const selectTableView = payload => ({
+    type: 'SELECT_TABLE_VIEW',
+})
+
+export const selectListView = payload => ({
+    type: 'SELECT_LIST_VIEW',
+})
